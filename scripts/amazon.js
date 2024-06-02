@@ -9,6 +9,7 @@
 
 // save data - data structure.
 
+/*
 const products = [{
   image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
   name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
@@ -37,8 +38,18 @@ const products = [{
     count: 56
   },
   priceCents: 799
-}];
+},
 
+{
+  image: 'images/products/black-2-slot-toaster.jpg',
+  name: '2 Slot Toaster - Black',
+  rating: {
+    stars: 5.0,
+    count: 2197
+  },
+  priceCents: 1899
+}];
+*/ 
 
 // Generate the HTML
 // combine this html together.
