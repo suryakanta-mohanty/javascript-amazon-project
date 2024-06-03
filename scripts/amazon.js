@@ -1,3 +1,5 @@
+import {cart} from '../data/cart.js';
+
 
 /* the main idea of javascipt
    1. Save the data
