@@ -1,4 +1,4 @@
-import {cart} from '../data/cart.js';
+import {cart, addToCart} from '../data/cart.js';
 import { products } from '../data/products.js';
 
 /* the main idea of javascipt
@@ -89,6 +89,19 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
 const addedMessageTimeouts = {};
 
+//moving the addToCart() funtion to it's own file.
+// best practice - group related code together into it's own file.
+
+function updateCartQuantity(){
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) =>{
+    cartQuantity += cartItem.quantity;
+  });
+
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
+
 document.querySelectorAll('.js-add-to-cart').forEach((button) =>{
   button.addEventListener('click', ()=>{
     
@@ -105,37 +118,9 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) =>{
     // const productId = button.dataset.productId;
     const {productId} = button.dataset;   // destructuring
     
-    let matchingItem;
-    cart.forEach((item) =>{
-      if(productId === item.productId){
-        matchingItem = item;
-      }
-    });
-
-    const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
-    const quantity = Number(quantitySelector.value);  // converting string to number.
+    addToCart(productId);
+    updateCartQuantity();
     
-
-    if(matchingItem){
-      matchingItem.quantity += quantity;
-
-    }else{
-      cart.push({
-        // productId: productId,
-        // quantity: quantity
-        productId,
-        quantity
-      });
-    }
-
-
-    let cartQuantity = 0;
-
-    cart.forEach((item) =>{
-      cartQuantity += item.quantity;
-    });
-
-    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 
     const addedMessage =  document.querySelector(`.js-added-to-cart-${productId}`);
     addedMessage.classList.add('added-to-cart-visible');
