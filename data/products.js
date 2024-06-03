@@ -656,5 +656,45 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: 'joiienoai-8ask8-lkasoi-79ynlkc-ajs',
+    image: 'images/products/backpack.jpg',
+    name: 'YOREPEK Travel Backpack, Extra Large 50L Laptop Backpacks',
+    rating: {
+      stars: 4.0,
+      count: 3409
+    },
+    priceCents: 2799,
+    keywords: [
+      'backpack',
+      'backpack for women',
+      'backpack for men',
+      'backpack for kids',
+      'backpack cooler',
+      'backpack for work',
+      'backpack for girl',
+      'backpack for school'
+    ]
+  },
+  {
+    id: 'ioack-okd3kans8-lansoh2-jans3-ajnso',
+    image: "images/products/umbrella.jpg",
+    name: 'Gorilla Grip Windproof Compact Stick Umbrella for Rain',
+    rating: {
+      stars: 4.5,
+      count: 2309
+    },
+    priceCents: 1799,
+    keywords: [
+      'umbrella',
+      'umbrella for rain',
+      'umbrella for sunlight',
+      'umbrella base',
+      'umbrella stand',
+      'umbrella hat',
+      'umbrella outdoor patio',
+      'umbrella large'
+    ]
   }
 ];

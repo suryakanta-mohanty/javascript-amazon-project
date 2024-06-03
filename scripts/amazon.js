@@ -146,7 +146,8 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) =>{
        3. if it's not in the cart, add it to the cart.
      */
 
-    const productId = button.dataset.productId;
+    // const productId = button.dataset.productId;
+    const {productId} = button.dataset;   // destructuring
 
     let matchingItem;
     cart.forEach((item) =>{
@@ -164,8 +165,10 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) =>{
 
     }else{
       cart.push({
-        productId: productId,
-        quantity: quantity
+        // productId: productId,
+        // quantity: quantity
+        productId,
+        quantity
       });
     }
 
