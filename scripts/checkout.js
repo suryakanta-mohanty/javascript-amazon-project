@@ -142,20 +142,30 @@ document.querySelectorAll('.js-update-link').forEach((link) => {
 
 document.querySelectorAll('.js-save-link').forEach((link) => {
   link.addEventListener('click', () => {
-    const {productId} = link.dataset;
+    
+    saveQuantity(link);
+    
+  });
+});
 
-    const container = document.querySelector(`.js-cart-item-container-${productId}`);
-    container.classList.remove('is-editing-quantity');  
+function saveQuantity(link){
+  const {productId} = link.dataset;
 
     const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
     const newQuantity = Number(quantityInput.value);
 
+    if(newQuantity < 0 || newQuantity >= 1000){
+      alert('Quantity must be less than atlest 0 or less than 1000.');
+      return;
+    }
+
     updateQuantity(productId, newQuantity);
+
+    const container = document.querySelector(`.js-cart-item-container-${productId}`);
+    container.classList.remove('is-editing-quantity');  
 
     const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
     quantityLabel.innerHTML = newQuantity;
 
-    updateCartQuantity(); 
-    
-  });
-});
+    updateCartQuantity();
+}
