@@ -41,3 +41,9 @@ if(formatCurrency(2000.4) === '20.00'){
 
    2. Edge cases - test with values that are tricky.
 */
+
+/* 
+    Testing framework:
+    
+    A popular one - Jasmine
+*/
