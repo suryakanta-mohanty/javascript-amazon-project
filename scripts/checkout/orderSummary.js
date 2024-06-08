@@ -49,7 +49,9 @@ export function renderOrderSummary(){
                 Update
               </span>
               <input class="quantity-input js-quantity-input-${matchingProduct.id}">
-              <span class="save-quantity-link link-primary js-save-link" data-product-id="${matchingProduct.id}">Save</span>
+              <span class="save-quantity-link link-primary js-save-link" data-product-id="${matchingProduct.id}">
+                Save
+              </span>
               <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
                 Delete
               </span>
@@ -165,7 +167,10 @@ export function renderOrderSummary(){
       const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
       quantityLabel.innerHTML = newQuantity;
 
-      updateCartQuantity();
+      updateCartQuantity(productId, newQuantity);
+      renderCheckoutHeader();
+      renderOrderSummary();
+      renderPaymentSummary();
   }
 
   document.querySelectorAll('.js-delivery-option').forEach((element) => {
