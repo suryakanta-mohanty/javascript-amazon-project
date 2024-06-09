@@ -61,6 +61,45 @@ class Clothing extends Product{   // inheritance in js
   }
 } 
 
+/*
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString());
+*/ 
+/*
+// 'this' can be used anywhere in our code.
+console.log(this);  // undefined
+
+const obj = {
+  a: 2,
+  b: this.a  // at this point, obj is not been created yet. So, 'this' = undefined
+};
+
+// we can only use 'this', when we are inside a method. But outside the method, 'this' will always be undfined.
+console.log(obj);  // error - 
+*/
+
+/*
+// inside a function, we can change 'this' to whatever we want.
+function logThis(){
+  console.log(this);  
+}
+
+logThis(); // undefined
+logThis.call('hello'); // hello
+
+
+// "this" keeps the value that it had outside the arrow function.
+const obj2 = {
+  method:()=>{  // arrow function do not change the value of "this".
+    console.log(this); // "this" will have same value as outside the arrow function.
+  }
+}
+
+obj2.method();  // undefined
+*/ 
+
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -770,4 +809,10 @@ export const products = [
 
 /* 
   Polymorphism = use a method without knowing the class.
+*/
+
+/* 
+  built-in class - 
+   - new Date() = generates an object that represents the current date.
+      - .toLocalTimeString() = it's a method, that gives the current time.
 */
