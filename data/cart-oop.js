@@ -1,3 +1,4 @@
+
 function Cart(localStorageKey){    // in OOP - use PascalCase for things that generate objects.
   const cart = {
     // inside in an object we can't write 'export' or 'let'.
@@ -251,7 +252,10 @@ const bussinessCart = {
 console.log(cart);
 console.log(bussinessCart);
 
-/* the final one is the better way to create object. 
+/*
+  1. the final one is the better way to create object. 
     - Create a function that generates objects
-    
+   
+  2. An even better way to generate objects
+    - class = object generator
 */
