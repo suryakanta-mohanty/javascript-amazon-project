@@ -106,3 +106,8 @@ export function updateDeliveryOption(productId, deliveryOptionId){
 
   saveToStorage();
 }
+
+/* 
+  Procedural Programming
+   - a set of step-by-step instructions = a function.
+*/
