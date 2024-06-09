@@ -34,7 +34,32 @@ class Product{
   getPrice(){
     return `$${formatCurrency(this.priceCents)}`;
   }
+
+  extraInfoHTML(){
+    return '';
+  }
+  
 }
+
+class Clothing extends Product{   // inheritance in js
+  sizeChartLink;
+
+  constructor(productDetails){
+    super(productDetails);  // it calls the constructor of parent class.
+    this.sizeChartLink = productDetails.sizeChartLink;
+  }
+
+  extraInfoHTML(){   // this method will override the parent class's method
+    
+    // super.extraInfoHTML - if we need to, we can call like this.
+
+    return `
+      <a href="${this.sizeChartLink}" target="_blank">
+        Size Chart
+      </a>
+    `;
+  }
+} 
 
 export const products = [
   {
@@ -736,5 +761,13 @@ export const products = [
     ]
   }
 ].map((productDetails) =>{
+  if(productDetails.type === 'clothing'){
+    return new Clothing(productDetails);
+  }
   return new Product(productDetails);
 });
+
+
+/* 
+  Polymorphism = use a method without knowing the class.
+*/
