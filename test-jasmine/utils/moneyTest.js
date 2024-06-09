@@ -1,4 +1,4 @@
-import {formatCurrency} from '../scripts/utils/money.js'; 
+import {formatCurrency} from '../../scripts/utils/money.js'; 
 
 // this how we creates test suits in jasmine
 
