@@ -7,8 +7,9 @@
 class Cart{
   // cartItems = undefined ;
   // localStorageKey = undefined;
-  cartItems ;
-  localStorageKey ;
+
+  cartItems ;  // it's a public perporty - it can be accessed outside of the class.
+  #localStorageKey ; // Private Property - it can't be used outside of the class
 
   // example for constructor
   /* 
@@ -17,12 +18,13 @@ class Cart{
     2. Should not return anything
   */
   constructor(localStorageKey) {
-    this.localStorageKey = localStorageKey;
-    this.loadFromStorage();
+    this.#localStorageKey = localStorageKey;
+    this.#loadFromStorage();
    
   }
-  loadFromStorage(){
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey)); 
+
+  #loadFromStorage(){   // making this private property as well
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey)); 
     
     if(!this.cartItems){
       
@@ -40,7 +42,7 @@ class Cart{
   } 
 
   saveToStorage(){
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
   }
 
   addToCart(productId){
