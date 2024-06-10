@@ -79,3 +79,10 @@ describe('Test suite: renderOrderSummary', ()=>{
 /* Hooks
    - lets us run some code for each.
 */
+
+/*
+  Promises 
+    - better way to handle asynchronous code
+    - similar to done() function.
+    - Let us wait for some code to finish, before going to the next step.
+*/
