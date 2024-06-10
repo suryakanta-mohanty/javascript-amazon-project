@@ -30,3 +30,5 @@ xhr.send();
     
     - Starts with 2 (200, 201, 204) = succeeded
 */
+
+// fetch() = better way to make HTTP requests.
