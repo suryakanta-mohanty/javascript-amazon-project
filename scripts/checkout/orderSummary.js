@@ -81,7 +81,7 @@ export function renderOrderSummary(){
       
       const dateString = calculateDeliveryDate(deliveryOption);
 
-      const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `${formatCurrency(deliveryOption.priceCents)} -`;
+      const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)} -`;
       
       const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 

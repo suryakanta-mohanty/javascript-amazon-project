@@ -870,3 +870,5 @@ export const products = [
 
 // fetch() = better way to make HTTP requests.
 //  - it uses a promises
+
+// async Await = even better way to handle asynchronous code.

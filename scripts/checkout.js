@@ -12,7 +12,7 @@ import { loadProducts, loadProductsFetch } from '../data/products.js';
 // Promise.all() - lets us run multiple promises at the same time.
 //  - and wait for all of them to finish.
 
-
+/*
 Promise.all([  // array
   loadProductsFetch(),
   // new Promise((resolve) =>{
@@ -26,6 +26,8 @@ Promise.all([  // array
   renderOrderSummary();
   renderPaymentSummary();
 });
+*/
+
 
 /*
 new Promise((resolve)=>{
@@ -52,3 +54,18 @@ loadProducts(() =>{
   renderPaymentSummary();
 });
 */
+
+async function loadPage(){
+  await loadProductsFetch();  
+
+  renderCheckoutHeader();
+  renderOrderSummary();
+  renderPaymentSummary();
+
+  // return 'value2';   // it will convert into resolve(value2)
+}
+loadPage();
+
+// async = makes a function return a promise
+// await = lets us write asynchronous code like normal code.
+//  - we can only use 'await', when we are inside an async function.
