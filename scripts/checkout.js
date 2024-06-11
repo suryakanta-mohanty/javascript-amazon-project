@@ -56,7 +56,15 @@ loadProducts(() =>{
 */
 
 async function loadPage(){
-  await loadProductsFetch();  
+
+  // error handeling in async await .
+  try{
+    // for manualy creating an error.
+    // throw 'error 1';
+    await loadProductsFetch();  
+  } catch(error){
+    console.log('error, unexpected error. try again later');
+  }
 
   renderCheckoutHeader();
   renderOrderSummary();
@@ -69,3 +77,4 @@ loadPage();
 // async = makes a function return a promise
 // await = lets us write asynchronous code like normal code.
 //  - we can only use 'await', when we are inside an async function.
+
